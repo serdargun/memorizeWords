@@ -9,7 +9,7 @@ import {WordListItem} from './components';
 
 export default function CategoryLanding({route, navigation}) {
   const {data} = route.params;
-  const jsonDb = storage.getString('data');
+  const jsonDb = storage.getString('data') || JSON.stringify([]);
   const db = JSON.parse(jsonDb);
   const category_id = data.id;
   const isCategoryExistsOnDb = db.some(item => item.id === category_id);

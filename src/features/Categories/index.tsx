@@ -8,13 +8,13 @@ import {colors} from '../../constants';
 import {storage} from '../../helpers';
 
 const Categories = () => {
-  const jsonDb = storage.getString('data');
-  const db = jsonDb ? JSON.parse(jsonDb) : null;
+  const jsonDb = storage.getString('data') || JSON.stringify([]);
+  const db = JSON.parse(jsonDb);
 
   const calcAccurationPct = category => {
     const category_id = category.id;
-    const isCategoryExistsOnDb = db?.some(item => item.id === category_id);
-    const categoryOnDb = db?.find(item => item.id === category_id);
+    const isCategoryExistsOnDb = db.some(item => item.id === category_id);
+    const categoryOnDb = db.find(item => item.id === category_id);
 
     if (isCategoryExistsOnDb) {
       const getLevelSum = (total, item, currentIndex, arr) => {
