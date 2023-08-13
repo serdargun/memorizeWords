@@ -33,7 +33,7 @@ export default function Category({data, accurationPct}) {
       onPress={onPress}>
       <View>
         <Text size={16} color={colors.white}>
-          {data.category_name}
+          {data.translate}
         </Text>
         <Text size={14} color={colors.quaternary}>
           {data.words.length + ' Kelime'}
