@@ -69,10 +69,18 @@ const Categories = () => {
       })
       .sort((a, b) => b.accurationPct - a.accurationPct);
 
-    return sortedOngoingCategories.map((item, index) => {
-      const accurationPct = calcAccurationPct(item);
-      return <Category key={index} data={item} accurationPct={accurationPct} />;
-    });
+    return (
+      sortedOngoingCategories.length && (
+        <CategoryCarousel label="Devam ediyor">
+          {sortedOngoingCategories.map((item, index) => {
+            const accurationPct = calcAccurationPct(item);
+            return (
+              <Category key={index} data={item} accurationPct={accurationPct} />
+            );
+          })}
+        </CategoryCarousel>
+      )
+    );
   };
 
   return (
@@ -81,9 +89,7 @@ const Categories = () => {
         Kelimeler
       </Text>
       <ScrollView>
-        <CategoryCarousel label="Devam ediyor">
-          {renderOngoingCategories()}
-        </CategoryCarousel>
+        {renderOngoingCategories()}
         <CategoryCarousel label="Life">{renderCategories(0)}</CategoryCarousel>
         <CategoryCarousel label="Personal">
           {renderCategories(1)}
