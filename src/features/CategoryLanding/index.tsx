@@ -54,6 +54,30 @@ export default function CategoryLanding({
     return null;
   };
 
+  const renderButton = () => {
+    const incompletedWordArr = wordsOnDb?.filter(word => word.level !== 3);
+    if (incompletedWordArr?.length) {
+      return (
+        <Button
+          label="Başla"
+          onPress={() => navigation.navigate('StudyBoard', {data})}
+        />
+      );
+    }
+    return (
+      <>
+        <Text
+          size={16}
+          color={colors.primary}
+          center
+          style={styles.congratsText}>
+          🎉 Tebrikler kategoriyi tamamladınız!
+        </Text>
+        <Button label="Kategoriler" onPress={() => navigation.goBack()} />
+      </>
+    );
+  };
+
   {
     /**
 notification system olusturulacak MVP sonrasi
@@ -71,10 +95,7 @@ internetsiz resimler yuklenemeyecegi icin internet uyarisi koyulacak
         data={data.words}
         renderItem={item => renderItem(item.item)}
       />
-      <Button
-        label="Başla"
-        onPress={() => navigation.navigate('StudyBoard', {data})}
-      />
+      {renderButton()}
     </ScreenContainer>
   );
 }
@@ -82,4 +103,5 @@ internetsiz resimler yuklenemeyecegi icin internet uyarisi koyulacak
 const styles = StyleSheet.create({
   title: {paddingHorizontal: 20},
   list: {paddingHorizontal: 20, paddingVertical: 20},
+  congratsText: {marginBottom: 10},
 });
