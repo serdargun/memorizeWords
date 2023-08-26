@@ -5,7 +5,7 @@ import {colors, fonts} from '../constants';
 
 interface Props {
   label: string;
-  onPress: any;
+  onPress: () => void;
   style?: ViewStyle;
   labelColor?: string;
   labelStyle?: TextStyle;

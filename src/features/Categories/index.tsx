@@ -6,18 +6,27 @@ import {Text} from '../../components';
 import {ScreenContainer} from '../../wrappers';
 import {colors} from '../../constants';
 import {storage} from '../../helpers';
+import {Data, WordOnDb} from '../../constants/types';
 
 const Categories = () => {
   const jsonDb = storage.getString('data') || JSON.stringify([]);
   const db = JSON.parse(jsonDb);
 
-  const calcAccurationPct = category => {
+  const calcAccurationPct = (category: Data) => {
     const category_id = category.id;
-    const isCategoryExistsOnDb = db.some(item => item.id === category_id);
-    const categoryOnDb = db.find(item => item.id === category_id);
+    const isCategoryExistsOnDb = db.some(
+      (item: Data) => item.id === category_id,
+    );
+    const categoryOnDb = db.find((item: WordOnDb) => item.id === category_id);
 
+    type Total = {levelSum: number; wordLength: number};
     if (isCategoryExistsOnDb) {
-      const getLevelSum = (total, item, currentIndex, arr) => {
+      const getLevelSum = (
+        total: Total,
+        item: WordOnDb,
+        currentIndex: number,
+        arr: WordOnDb[],
+      ) => {
         return {levelSum: total.levelSum + item.level, wordLength: arr.length};
       };
 
@@ -32,7 +41,7 @@ const Categories = () => {
     }
   };
 
-  const renderCategories = top_category => {
+  const renderCategories = (top_category: number) => {
     return data.data
       .filter(item => item.top_category === top_category)
       .map((item, index) => {
@@ -47,7 +56,7 @@ const Categories = () => {
   const renderOngoingCategories = () => {
     const ongoingCategories = data.data.filter(item => {
       const isOngoingCategory = db?.some(
-        dbCategory => dbCategory.id === item.id,
+        (dbCategory: Data) => dbCategory.id === item.id,
       );
       if (isOngoingCategory) {
         return true;

@@ -4,18 +4,19 @@ import {Button, Text} from '../../../components';
 import Success from './Success';
 import Fail from './Fail';
 import {colors} from '../../../constants';
+import {PlaygroundProps, Status, Word} from '../../../constants/types';
 
 export default function Playground_1({
   batch,
   selectedWord,
   setSelectedWord,
   setSelectedPlayground,
-}) {
+}: PlaygroundProps) {
   const shuffledBatch = [...batch].sort(() => 0.5 - Math.random());
   const options = shuffledBatch.slice(0, 3);
 
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [status, setStatus] = useState(null);
+  const [selectedOption, setSelectedOption] = useState<Word | null>(null);
+  const [status, setStatus] = useState<Status | null>(null);
 
   useEffect(() => {
     if (status) {
@@ -26,7 +27,7 @@ export default function Playground_1({
     }
   }, [status]);
 
-  const onImageOptionPress = option => {
+  const onImageOptionPress = (option: Word) => {
     setSelectedOption(option);
     if (selectedWord.word.name === option.name) {
       setStatus('success');
@@ -55,9 +56,9 @@ export default function Playground_1({
   const renderContent = () => {
     switch (status) {
       case 'success':
-        return <Success selectedOption={selectedOption} />;
+        return selectedOption && <Success selectedOption={selectedOption} />;
       case 'fail':
-        return <Fail selectedOption={selectedOption} />;
+        return selectedOption && <Fail selectedOption={selectedOption} />;
       default:
         return (
           <>

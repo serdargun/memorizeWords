@@ -11,19 +11,30 @@ import {
   Playground_2,
   Playground_3,
 } from './components';
+import {StudyBoardProps} from '../../navigation';
+import {
+  CategoryOnDb,
+  Data,
+  Playground,
+  Word,
+  WordOnDb,
+  WordWithIndex,
+} from '../../constants/types';
 
-const StudyBoard = ({navigation, route}) => {
+const StudyBoard = ({navigation, route}: StudyBoardProps) => {
   const {data} = route.params;
-  const jsonDb = storage.getString('data');
+  const jsonDb = storage.getString('data') || '';
   const db = JSON.parse(jsonDb);
   const category_id = data.id;
-  const isCategoryExistsOnDb = db.some(item => item.id === category_id);
-  const categoryOnDb = db.find(item => item.id === category_id);
+  const isCategoryExistsOnDb = db.some(
+    (item: CategoryOnDb) => item.id === category_id,
+  );
+  const categoryOnDb = db.find((item: CategoryOnDb) => item.id === category_id);
   const wordsOnDb = categoryOnDb.words;
 
-  const [batch, setBatch] = useState(null);
-  const [selectedWord, setSelectedWord] = useState(null);
-  const [selectedPlayground, setSelectedPlayground] = useState(0);
+  const [batch, setBatch] = useState<Word[] | null>(null);
+  const [selectedWord, setSelectedWord] = useState<WordWithIndex | null>(null);
+  const [selectedPlayground, setSelectedPlayground] = useState<Playground>(0);
 
   useEffect(() => {
     init();
@@ -38,8 +49,10 @@ const StudyBoard = ({navigation, route}) => {
   useEffect(() => {
     if (selectedPlayground === 'finish') {
       //do the db staff and renew batch with pickBatchFromDb()
-      const formattedWords = wordsOnDb.map(item => {
-        const foundedWord = batch.find(batchWord => item.id === batchWord.id);
+      const formattedWords = wordsOnDb.map((item: WordOnDb) => {
+        const foundedWord = batch?.find(
+          (batchWord: Word) => item.id === batchWord.id,
+        );
         if (foundedWord) {
           const formattedWord = {...item, level: item.level + 1};
           return formattedWord;
@@ -50,7 +63,7 @@ const StudyBoard = ({navigation, route}) => {
         id: category_id,
         words: formattedWords,
       };
-      const formattedDb = db.map(item =>
+      const formattedDb = db.map((item: Data) =>
         item.id === category_id ? category : item,
       );
       storage.set('data', JSON.stringify(formattedDb));
@@ -82,15 +95,23 @@ const StudyBoard = ({navigation, route}) => {
   };
 
   const pickBatchFromDb = () => {
-    const sortedWordsOnDb = wordsOnDb.sort((a, b) => a.level - b.level);
+    const sortedWordsOnDb = wordsOnDb.sort(
+      (a: WordOnDb, b: WordOnDb) => a.level - b.level,
+    );
     const sortedWordsBatchOnDb = sortedWordsOnDb.slice(0, 3);
-    const sortedWordsBatchOnCategory = sortedWordsBatchOnDb.map(item => {
-      return data.words.find(word => word.id === item.id);
-    });
+    const sortedWordsBatchOnCategory = sortedWordsBatchOnDb.map(
+      (item: WordOnDb) => {
+        return data.words.find(word => word.id === item.id);
+      },
+    );
     setBatch(sortedWordsBatchOnCategory);
   };
 
   const getSelectedPlayground = () => {
+    if (!batch || !selectedWord) {
+      return null;
+    }
+
     switch (selectedPlayground) {
       case 0:
         return (
@@ -166,7 +187,9 @@ const StudyBoard = ({navigation, route}) => {
   };
 
   const onTtsButtonPress = () => {
-    Tts.speak(selectedWord.word.name);
+    if (selectedWord) {
+      Tts.speak(selectedWord.word.name);
+    }
   };
 
   return (

@@ -2,8 +2,15 @@ import {View, StyleSheet} from 'react-native';
 import React from 'react';
 import {Text} from '../../../components';
 import {colors} from '../../../constants';
+import {Word} from '../../../constants/types';
 
-export default function WordListItem({item, level}) {
+export default function WordListItem({
+  item,
+  level,
+}: {
+  item: Word;
+  level: number;
+}) {
   const renderLevel = () => {
     let arr = [];
     for (let index = 0; index < level; index++) {

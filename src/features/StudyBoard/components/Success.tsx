@@ -3,8 +3,9 @@ import React from 'react';
 import {Text} from '../../../components';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {colors} from '../../../constants';
+import {Word} from '../../../constants/types';
 
-export default function Success({selectedOption}) {
+export default function Success({selectedOption}: {selectedOption: Word}) {
   return (
     <View style={styles.statusContainer}>
       <Icon name="check-circle" size={100} color={colors.primary} />

@@ -2,13 +2,14 @@ import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Button, Text} from '../../../components';
 import {colors} from '../../../constants';
+import {PlaygroundProps} from '../../../constants/types';
 
 export default function Playground_0({
   batch,
   selectedWord,
   setSelectedWord,
   setSelectedPlayground,
-}) {
+}: PlaygroundProps) {
   const onUnderstoodPress = () => {
     const nextWordIndex = selectedWord.index + 1;
     if (nextWordIndex < 3) {

@@ -2,28 +2,32 @@ import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Text} from '../../../components';
-import {colors} from '../../../constants';
+import {colors, types} from '../../../constants';
 import AnimatedProgress from './AnimatedProgress';
+import {CategoryLandingProps} from '../../../navigation';
 
-export default function Category({data, accurationPct}) {
-  const navigation = useNavigation();
+interface Props {
+  data: types.Data;
+  accurationPct?: number;
+}
+
+const Category = ({data, accurationPct}: Props) => {
+  type CategoryLandingScreenNavigationProp = CategoryLandingProps['navigation'];
+  const navigation = useNavigation<CategoryLandingScreenNavigationProp>();
 
   const onPress = () => {
     navigation.navigate('CategoryLanding', {data});
   };
 
   const renderProgressBar = () => {
-    const hasAccurationPct = Boolean(accurationPct);
-    return (
-      hasAccurationPct && (
-        <View>
-          <Text size={12} color={colors.white}>
-            {accurationPct + '%'}
-          </Text>
-          <AnimatedProgress widthPct={accurationPct} />
-        </View>
-      )
-    );
+    return accurationPct ? (
+      <View>
+        <Text size={12} color={colors.white}>
+          {accurationPct + '%'}
+        </Text>
+        <AnimatedProgress widthPct={accurationPct} />
+      </View>
+    ) : null;
   };
 
   return (
@@ -50,7 +54,7 @@ export default function Category({data, accurationPct}) {
       {renderProgressBar()}
     </TouchableOpacity>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -76,3 +80,5 @@ const styles = StyleSheet.create({
   },
   icon: {width: 40, height: 40},
 });
+
+export default Category;

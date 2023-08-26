@@ -4,16 +4,19 @@ import {Text} from '../../../components';
 import Success from './Success';
 import Fail from './Fail';
 import {colors} from '../../../constants';
+import {PlaygroundProps, Status} from '../../../constants/types';
 
 export default function Playground_3({
   batch,
   selectedWord,
   setSelectedWord,
   setSelectedPlayground,
-}) {
-  const [shuffledCharacters, setShuffledCharacters] = useState([]);
-  const [selectedCharacterIndexes, setSelectedCharacterIndexes] = useState([]);
-  const [status, setStatus] = useState(null);
+}: PlaygroundProps) {
+  const [shuffledCharacters, setShuffledCharacters] = useState<string[]>([]);
+  const [selectedCharacterIndexes, setSelectedCharacterIndexes] = useState<
+    number[]
+  >([]);
+  const [status, setStatus] = useState<Status | null>();
 
   useEffect(() => {
     if (status) {
@@ -60,10 +63,10 @@ export default function Playground_3({
     }
   };
 
-  const shuffle = string => {
-    var parts = string.split('');
+  const shuffle = (str: string) => {
+    var parts = str.split('');
     for (var i = parts.length; i > 0; ) {
-      var random = parseInt(Math.random() * i);
+      var random = parseInt((Math.random() * i).toString(), 10);
       var temp = parts[--i];
       parts[i] = parts[random];
       parts[random] = temp;
@@ -71,7 +74,7 @@ export default function Playground_3({
     return parts;
   };
 
-  const onCharacterPress = index => {
+  const onCharacterPress = (index: number) => {
     const isAlreadySelected = selectedCharacterIndexes.includes(index);
     if (isAlreadySelected) {
       const filteredArr = selectedCharacterIndexes.filter(
@@ -87,10 +90,11 @@ export default function Playground_3({
     return (
       <View style={styles.splittedWordContainer}>
         {selectedWord.word.name.split('').map((item, index) => {
+          const character = shuffledCharacters[selectedCharacterIndexes[index]];
           return (
             <View key={index} style={styles.splittedWord}>
               <Text color={colors.black} size={16} center>
-                {shuffledCharacters[selectedCharacterIndexes[index]]}
+                {character}
               </Text>
             </View>
           );
@@ -102,9 +106,9 @@ export default function Playground_3({
   const renderContent = () => {
     switch (status) {
       case 'success':
-        return <Success selectedOption={{name: selectedWord.word.name}} />;
+        return <Success selectedOption={selectedWord.word} />;
       case 'fail':
-        return <Fail selectedOption={selectedOption} />;
+        return <Fail selectedOption={selectedWord.word} />;
       default:
         return (
           <>

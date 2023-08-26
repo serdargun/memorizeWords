@@ -6,16 +6,23 @@ import {storage} from '../../helpers';
 import {ScreenContainer} from '../../wrappers';
 import {Button, Text} from '../../components';
 import {WordListItem} from './components';
+import {CategoryLandingProps} from '../../navigation';
+import {CategoryOnDb, Word, WordOnDb} from '../../constants/types';
 
-export default function CategoryLanding({route, navigation}) {
+export default function CategoryLanding({
+  route,
+  navigation,
+}: CategoryLandingProps) {
   const {data} = route.params;
   const jsonDb = storage.getString('data') || JSON.stringify([]);
   const db = JSON.parse(jsonDb);
   const category_id = data.id;
-  const isCategoryExistsOnDb = db.some(item => item.id === category_id);
-  const categoryOnDb = db.find(item => item.id === category_id);
+  const isCategoryExistsOnDb = db.some(
+    (item: CategoryOnDb) => item.id === category_id,
+  );
+  const categoryOnDb = db.find((item: CategoryOnDb) => item.id === category_id);
 
-  const [wordsOnDb, setWordsOnDb] = useState(null);
+  const [wordsOnDb, setWordsOnDb] = useState<WordOnDb[] | null>(null);
 
   const isFocused = useIsFocused();
 
@@ -36,9 +43,15 @@ export default function CategoryLanding({route, navigation}) {
     }
   }, [isFocused]);
 
-  const renderItem = item => {
-    const word = wordsOnDb.find(word => word.id === item.item.id);
-    return <WordListItem item={item.item} level={word.level} />;
+  const renderItem = (item: Word) => {
+    if (wordsOnDb) {
+      const word = wordsOnDb.find(word => word.id === item.id);
+      if (word) {
+        return <WordListItem item={item} level={word.level} />;
+      }
+      return null;
+    }
+    return null;
   };
 
   {
@@ -53,13 +66,11 @@ internetsiz resimler yuklenemeyecegi icin internet uyarisi koyulacak
       <Text size={36} color={colors.primary} style={styles.title}>
         {data.category_name}
       </Text>
-      {wordsOnDb && (
-        <FlatList
-          contentContainerStyle={styles.list}
-          data={data.words}
-          renderItem={renderItem}
-        />
-      )}
+      <FlatList
+        contentContainerStyle={styles.list}
+        data={data.words}
+        renderItem={item => renderItem(item.item)}
+      />
       <Button
         label="Başla"
         onPress={() => navigation.navigate('StudyBoard', {data})}

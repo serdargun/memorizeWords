@@ -1,16 +1,30 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  NativeStackScreenProps,
+  createNativeStackNavigator,
+} from '@react-navigation/native-stack';
 import {Categories, CategoryLanding, StudyBoard} from '../features';
+import {types} from '../constants';
+
+type RootStackParamList = {
+  Categories: {};
+  CategoryLanding: {data: types.Data};
+  StudyBoard: {data: types.Data};
+};
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
+export type CategoryLandingProps = NativeStackScreenProps<
+  RootStackParamList,
+  'CategoryLanding'
+>;
+
+export type StudyBoardProps = NativeStackScreenProps<
+  RootStackParamList,
+  'StudyBoard'
+>;
 
 export default function index() {
-  type RootStackParamList = {
-    Categories: {};
-    CategoryLanding: undefined;
-    StudyBoard: {};
-  };
-  const Stack = createNativeStackNavigator<RootStackParamList>();
-
   const screenOptions = {headerShown: false};
 
   return (

@@ -3,14 +3,15 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Text} from '../../../components';
 import {colors} from '../../../constants';
+import {Word} from '../../../constants/types';
 
-export default function Fail({selectedOption}) {
+export default function Fail({selectedOption}: {selectedOption: Word}) {
   return (
     <View style={styles.statusContainer}>
       <Icon name="cancel" size={100} color={'red'} />
       <View style={styles.divider} />
       <Text color={'red'} size={18}>
-        {selectedOption?.name}
+        {selectedOption.name}
       </Text>
     </View>
   );

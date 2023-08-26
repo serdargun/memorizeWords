@@ -11,13 +11,10 @@ interface Props {
 }
 
 const Text: React.FC<Props> = ({children, size, color, center, style}) => {
+  const textAlign = center ? 'center' : 'auto';
+
   return (
-    <RNText
-      style={[
-        styles.text,
-        style,
-        {fontSize: size, color, textAlign: center ? 'center' : 'auto'},
-      ]}>
+    <RNText style={[styles.text, style, {fontSize: size, color, textAlign}]}>
       {children}
     </RNText>
   );
