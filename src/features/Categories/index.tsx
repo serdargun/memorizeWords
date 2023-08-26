@@ -90,18 +90,18 @@ const Categories = () => {
       </Text>
       <ScrollView>
         {renderOngoingCategories()}
-        <CategoryCarousel label="Life">{renderCategories(0)}</CategoryCarousel>
-        <CategoryCarousel label="Personal">
+        <CategoryCarousel label="Yaşam">{renderCategories(0)}</CategoryCarousel>
+        <CategoryCarousel label="Kişisel">
           {renderCategories(1)}
         </CategoryCarousel>
-        <CategoryCarousel label="Hobbies">
+        <CategoryCarousel label="Hobiler">
           {renderCategories(2)}
         </CategoryCarousel>
-        <CategoryCarousel label="Places">
+        <CategoryCarousel label="Yerleşim Yeri">
           {renderCategories(3)}
         </CategoryCarousel>
-        <CategoryCarousel label="World">{renderCategories(4)}</CategoryCarousel>
-        <CategoryCarousel label="Education">
+        <CategoryCarousel label="Dünya">{renderCategories(4)}</CategoryCarousel>
+        <CategoryCarousel label="Eğitim">
           {renderCategories(5)}
         </CategoryCarousel>
       </ScrollView>
