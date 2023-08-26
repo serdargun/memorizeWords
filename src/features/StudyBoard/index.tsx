@@ -21,6 +21,8 @@ import {
   WordWithIndex,
 } from '../../constants/types';
 
+Tts.setDefaultLanguage('en-US');
+
 const StudyBoard = ({navigation, route}: StudyBoardProps) => {
   const {data} = route.params;
   const jsonDb = storage.getString('data') || '';
