@@ -7,8 +7,9 @@ import {ScreenContainer} from '../../wrappers';
 import {colors} from '../../constants';
 import {storage} from '../../helpers';
 import {Data, WordOnDb} from '../../constants/types';
+import {CategoriesProps} from '../../navigation';
 
-const Categories = () => {
+const Categories = ({navigation, route}: CategoriesProps) => {
   const jsonDb = storage.getString('data') || JSON.stringify([]);
   const db = JSON.parse(jsonDb);
 

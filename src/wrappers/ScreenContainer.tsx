@@ -1,9 +1,17 @@
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, StyleSheet, ViewStyle} from 'react-native';
 import React from 'react';
 import {colors} from '../constants';
 
-const ScreenContainer = ({children}: {children: React.ReactNode}) => {
-  return <SafeAreaView style={styles.container}>{children}</SafeAreaView>;
+const ScreenContainer = ({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: ViewStyle;
+}) => {
+  return (
+    <SafeAreaView style={[styles.container, style]}>{children}</SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({

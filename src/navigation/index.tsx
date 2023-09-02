@@ -1,28 +1,11 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {
-  NativeStackScreenProps,
-  createNativeStackNavigator,
-} from '@react-navigation/native-stack';
-import {Categories, CategoryLanding, StudyBoard} from '../features';
-import {types} from '../constants';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Categories, CategoryLanding, Network, StudyBoard} from '../features';
+import {RootStackParamList} from './types';
+export * from './types';
 
-type RootStackParamList = {
-  Categories: {};
-  CategoryLanding: {data: types.Data};
-  StudyBoard: {data: types.Data};
-};
 const Stack = createNativeStackNavigator<RootStackParamList>();
-
-export type CategoryLandingProps = NativeStackScreenProps<
-  RootStackParamList,
-  'CategoryLanding'
->;
-
-export type StudyBoardProps = NativeStackScreenProps<
-  RootStackParamList,
-  'StudyBoard'
->;
 
 export default function index() {
   const screenOptions = {headerShown: false};
@@ -33,6 +16,9 @@ export default function index() {
         <Stack.Screen name="Categories" component={Categories} />
         <Stack.Screen name="CategoryLanding" component={CategoryLanding} />
         <Stack.Screen name="StudyBoard" component={StudyBoard} />
+        <Stack.Group screenOptions={{presentation: 'modal'}}>
+          <Stack.Screen name="Network" component={Network} />
+        </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
   );
