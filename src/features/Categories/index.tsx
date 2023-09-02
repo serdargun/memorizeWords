@@ -69,9 +69,8 @@ const Categories = ({navigation, route}: CategoriesProps) => {
         return {...item, accurationPct};
       })
       .sort((a, b) => b.accurationPct - a.accurationPct);
-
     return (
-      sortedOngoingCategories.length && (
+      sortedOngoingCategories.length >= 1 && (
         <CategoryCarousel label="Devam ediyor">
           {sortedOngoingCategories.map((item, index) => {
             const accurationPct = calcAccurationPct(item);
