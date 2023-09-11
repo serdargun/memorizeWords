@@ -87,7 +87,7 @@ internetsiz resimler yuklenemeyecegi icin internet uyarisi koyulacak
 
   return (
     <ScreenContainer>
-      <Header title={data.category_name} backButton />
+      <Header title={data.translate} backButton />
       <FlatList
         contentContainerStyle={styles.list}
         data={data.words}
