@@ -3,7 +3,7 @@ import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import Tts from 'react-native-tts';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {ScreenContainer} from '../../wrappers';
-import {storage} from '../../helpers';
+import {storage, system} from '../../helpers';
 import {colors} from '../../constants';
 import {
   Playground_0,
@@ -37,6 +37,8 @@ const StudyBoard = ({navigation, route}: StudyBoardProps) => {
   const [batch, setBatch] = useState<Word[] | null>(null);
   const [selectedWord, setSelectedWord] = useState<WordWithIndex | null>(null);
   const [selectedPlayground, setSelectedPlayground] = useState<Playground>(0);
+
+  const {shuffle} = system;
 
   useEffect(() => {
     init();
@@ -92,7 +94,7 @@ const StudyBoard = ({navigation, route}: StudyBoardProps) => {
 
       db.push(category);
       storage.set('data', JSON.stringify(db));
-      setBatch(wordsOnDb.slice(0, 3));
+      setBatch(shuffle(wordsOnDb.slice(0, 3)));
     }
   };
 
@@ -106,7 +108,7 @@ const StudyBoard = ({navigation, route}: StudyBoardProps) => {
         return data.words.find(word => word.id === item.id);
       },
     );
-    setBatch(sortedWordsBatchOnCategory);
+    setBatch(shuffle(sortedWordsBatchOnCategory));
   };
 
   const getSelectedPlayground = () => {
