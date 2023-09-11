@@ -4,7 +4,7 @@ import {FlatList, StyleSheet} from 'react-native';
 import {colors} from '../../constants';
 import {storage} from '../../helpers';
 import {ScreenContainer} from '../../wrappers';
-import {Button, Text} from '../../components';
+import {Button, Header, Text} from '../../components';
 import {WordListItem} from './components';
 import {CategoryLandingProps} from '../../navigation';
 import {CategoryOnDb, Word, WordOnDb} from '../../constants/types';
@@ -87,9 +87,7 @@ internetsiz resimler yuklenemeyecegi icin internet uyarisi koyulacak
 
   return (
     <ScreenContainer>
-      <Text size={36} color={colors.primary} style={styles.title}>
-        {data.category_name}
-      </Text>
+      <Header title={data.category_name} backButton />
       <FlatList
         contentContainerStyle={styles.list}
         data={data.words}
@@ -101,7 +99,6 @@ internetsiz resimler yuklenemeyecegi icin internet uyarisi koyulacak
 }
 
 const styles = StyleSheet.create({
-  title: {paddingHorizontal: 20},
   list: {paddingHorizontal: 20, paddingVertical: 20},
   congratsText: {marginBottom: 10},
 });

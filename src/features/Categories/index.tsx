@@ -2,9 +2,8 @@ import React from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
 import data from '../../assets/data.json';
 import {Category, CategoryCarousel} from './components';
-import {Text} from '../../components';
+import {Header} from '../../components';
 import {ScreenContainer} from '../../wrappers';
-import {colors} from '../../constants';
 import {storage} from '../../helpers';
 import {Data, WordOnDb} from '../../constants/types';
 import {CategoriesProps} from '../../navigation';
@@ -85,10 +84,8 @@ const Categories = ({navigation, route}: CategoriesProps) => {
 
   return (
     <ScreenContainer>
-      <Text size={36} color={colors.primary} style={styles.title}>
-        Kelimeler
-      </Text>
-      <ScrollView>
+      <Header title="Kelimeler" />
+      <ScrollView contentContainerStyle={styles.content}>
         {renderOngoingCategories()}
         <CategoryCarousel label="Yaşam">{renderCategories(0)}</CategoryCarousel>
         <CategoryCarousel label="Kişisel">
@@ -110,7 +107,7 @@ const Categories = ({navigation, route}: CategoriesProps) => {
 };
 
 const styles = StyleSheet.create({
-  title: {paddingHorizontal: 20, marginBottom: 20},
+  content: {marginTop: 20},
 });
 
 export default Categories;
