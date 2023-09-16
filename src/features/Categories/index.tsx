@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
+import {ScrollView, StatusBar, StyleSheet} from 'react-native';
 import data from '../../assets/data.json';
 import {Category, CategoryCarousel} from './components';
 import {Header} from '../../components';
@@ -7,6 +7,7 @@ import {ScreenContainer} from '../../wrappers';
 import {storage} from '../../helpers';
 import {Data, WordOnDb} from '../../constants/types';
 import {CategoriesProps} from '../../navigation';
+import {colors} from '../../constants';
 
 const Categories = ({navigation, route}: CategoriesProps) => {
   const jsonDb = storage.getString('data') || JSON.stringify([]);
@@ -84,6 +85,7 @@ const Categories = ({navigation, route}: CategoriesProps) => {
 
   return (
     <ScreenContainer>
+      <StatusBar backgroundColor={colors.tertiary} />
       <Header title="Kelimeler" />
       <ScrollView contentContainerStyle={styles.content}>
         {renderOngoingCategories()}
