@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "626175274247",
+    "project_id": "memorize-20860",
+    "storage_bucket": "memorize-20860.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626175274247:android:691b4af11d6292958e69a2",
+        "android_client_info": {
+          "package_name": "com.memorizewords"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB63tWMrJyNXokTfz0mTgO4rN1dHyRc19k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
