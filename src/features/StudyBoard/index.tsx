@@ -1,5 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {
+  Image,
+  StatusBar,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import Tts from 'react-native-tts';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {ScreenContainer} from '../../wrappers';
@@ -198,6 +204,7 @@ const StudyBoard = ({navigation, route}: StudyBoardProps) => {
 
   return (
     <ScreenContainer>
+      <StatusBar backgroundColor={colors.transparent} translucent />
       {getImageOrPlayground()}
       {getSelectedPlayground()}
     </ScreenContainer>
