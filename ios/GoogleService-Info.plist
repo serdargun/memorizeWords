@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCIwYmyHx4g7ZEpoc9lMnXSDRoB81S8iBg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>626175274247</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.memorizewords</string>
+	<key>PROJECT_ID</key>
+	<string>memorize-20860</string>
+	<key>STORAGE_BUCKET</key>
+	<string>memorize-20860.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:626175274247:ios:d149efac3ea0dd4a8e69a2</string>
+</dict>
+</plist>
