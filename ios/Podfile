@@ -54,6 +54,7 @@ target 'memorizeWords' do
   pod 'nanopb', :modular_headers => true
   pod 'GoogleUtilities', :modular_headers => true
   $RNFirebaseAsStaticFramework = true
+  $RNGoogleMobileAdsAsStaticFramework = true
 
   target 'memorizeWordsTests' do
     inherit! :complete
