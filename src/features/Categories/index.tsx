@@ -2,7 +2,7 @@ import React from 'react';
 import {ScrollView, StatusBar, StyleSheet} from 'react-native';
 import data from '../../assets/data.json';
 import {Category, CategoryCarousel} from './components';
-import {Header} from '../../components';
+import {Banner, Header} from '../../components';
 import {ScreenContainer} from '../../wrappers';
 import {storage} from '../../helpers';
 import {Data, WordOnDb} from '../../constants/types';
@@ -104,6 +104,7 @@ const Categories = ({navigation, route}: CategoriesProps) => {
           {renderCategories(5)}
         </CategoryCarousel>
       </ScrollView>
+      <Banner />
     </ScreenContainer>
   );
 };
