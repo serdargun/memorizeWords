@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import Tts from 'react-native-tts';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/AntDesign';
 import {ScreenContainer} from '../../wrappers';
 import {storage, system} from '../../helpers';
 import {colors} from '../../constants';
@@ -198,7 +198,7 @@ const StudyBoard = ({navigation, route}: StudyBoardProps) => {
     return (
       <View style={styles.ttsContainer}>
         <TouchableOpacity style={styles.ttsButton} onPress={onTtsButtonPress}>
-          <Icon name="microphone" size={30} color={colors.quaternary} />
+          <Icon name="sound" size={40} color={colors.quaternary} />
         </TouchableOpacity>
       </View>
     );
