@@ -26,6 +26,8 @@ import {
   WordOnDb,
   WordWithIndex,
 } from '../../constants/types';
+import {useInterstitial} from '../../hooks';
+import {Loading} from '../../components';
 
 Tts.setDefaultLanguage('en-US');
 
@@ -43,6 +45,12 @@ const StudyBoard = ({navigation, route}: StudyBoardProps) => {
   const [batch, setBatch] = useState<Word[] | null>(null);
   const [selectedWord, setSelectedWord] = useState<WordWithIndex | null>(null);
   const [selectedPlayground, setSelectedPlayground] = useState<Playground>(0);
+
+  const onAdClosed = () => {
+    navigation.navigate('CategoryLanding', {data});
+  };
+
+  const {loadingAd, setLoadingAd} = useInterstitial(onAdClosed);
 
   const {shuffle} = system;
 
@@ -77,7 +85,7 @@ const StudyBoard = ({navigation, route}: StudyBoardProps) => {
         item.id === category_id ? category : item,
       );
       storage.set('data', JSON.stringify(formattedDb));
-      navigation.navigate('CategoryLanding', {data});
+      setLoadingAd(true);
       setSelectedPlayground(0);
     }
   }, [selectedPlayground]);
@@ -202,11 +210,21 @@ const StudyBoard = ({navigation, route}: StudyBoardProps) => {
     }
   };
 
+  const renderContent = () => {
+    return !loadingAd ? (
+      <>
+        {getImageOrPlayground()}
+        {getSelectedPlayground()}
+      </>
+    ) : (
+      <Loading />
+    );
+  };
+
   return (
     <ScreenContainer>
       <StatusBar backgroundColor={colors.transparent} translucent />
-      {getImageOrPlayground()}
-      {getSelectedPlayground()}
+      {renderContent()}
     </ScreenContainer>
   );
 };
