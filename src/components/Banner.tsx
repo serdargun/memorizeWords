@@ -7,11 +7,7 @@ export default function Banner() {
   const {banner_android, banner_ios} = admob;
   const adUnitId = __DEV__
     ? TestIds.BANNER
-    : Platform.select({
-        ios: banner_ios,
-        android: banner_android,
-        default: '',
-      });
+    : Platform.select({ios: banner_ios, android: banner_android, default: ''});
 
   return (
     <BannerAd

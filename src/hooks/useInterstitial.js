@@ -1,12 +1,17 @@
 import {useEffect, useState} from 'react';
+import {Platform} from 'react-native';
 import {TestIds, useInterstitialAd} from 'react-native-google-mobile-ads';
+import {admob} from '../constants';
 
 export function useInterstitial(onAdClosed) {
   const [loadingAd, setLoadingAd] = useState(false);
 
-  const {load, show, isLoaded, isClosed} = useInterstitialAd(
-    TestIds.INTERSTITIAL,
-  );
+  const {interstitial_android, interstitial_ios} = admob;
+  const unitId = __DEV__
+    ? TestIds.INTERSTITIAL
+    : Platform.select({ios: interstitial_ios, android: interstitial_android});
+
+  const {load, show, isLoaded, isClosed} = useInterstitialAd(unitId);
 
   useEffect(() => {
     if (isClosed) {
