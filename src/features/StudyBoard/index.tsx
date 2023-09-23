@@ -30,6 +30,7 @@ import {useInterstitial} from '../../hooks';
 import {Loading} from '../../components';
 
 Tts.setDefaultLanguage('en-US');
+Tts.setDefaultVoice('en-us-x-tpc-network');
 
 const StudyBoard = ({navigation, route}: StudyBoardProps) => {
   const {data} = route.params;
