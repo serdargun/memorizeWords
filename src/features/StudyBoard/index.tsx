@@ -29,10 +29,12 @@ import {
 import {useInterstitial} from '../../hooks';
 import {Loading} from '../../components';
 
-Tts.setDefaultLanguage('en-US');
-Tts.setDefaultVoice('en-us-x-tpc-network');
-
 const StudyBoard = ({navigation, route}: StudyBoardProps) => {
+  Tts.setDefaultLanguage('en-US');
+  Tts.addEventListener('tts-start', event => {});
+  Tts.addEventListener('tts-cancel', event => {});
+  Tts.addEventListener('tts-finish', event => {});
+
   const {data} = route.params;
   const jsonDb = storage.getString('data') || '';
   const db = JSON.parse(jsonDb);
