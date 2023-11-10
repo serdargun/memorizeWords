@@ -88,13 +88,13 @@
         },
         {
           "id": 17,
-          "name": "fit ",
+          "name": "fit",
           "translate": "Uygun"
         },
         {
           "id": 18,
-          "name": "fold (clothes) ",
-          "translate": "katlamak (kıyafet)"
+          "name": "fold",
+          "translate": "katlamak"
         },
         {
           "id": 19,
@@ -263,7 +263,7 @@
         },
         {
           "id": 65,
-          "name": "tie, tights",
+          "name": "tights",
           "translate": "tayt"
         },
         {
@@ -280,11 +280,6 @@
           "id": 69,
           "name": "T-shirt",
           "translate": "Tişört"
-        },
-        {
-          "id": 70,
-          "name": "sandal",
-          "translate": "sandal"
         },
         {
           "id": 71,
@@ -351,7 +346,7 @@
         },
         {
           "id": 4,
-          "name": "gold, golden",
+          "name": "golden",
           "translate": "altın"
         },
         {
@@ -413,11 +408,6 @@
       "translate": "İletişim ve Teknoloji",
       "words": [
         {
-          "id": 2,
-          "name": "blog",
-          "translate": "Blog"
-        },
-        {
           "id": 3,
           "name": "blogger",
           "translate": "blog yazarı"
@@ -471,11 +461,6 @@
           "id": 15,
           "name": "dial",
           "translate": "aramak"
-        },
-        {
-          "id": 16,
-          "name": "dial up",
-          "translate": "çevirmek"
         },
         {
           "id": 17,
@@ -553,11 +538,6 @@
           "translate": "buluş"
         },
         {
-          "id": 37,
-          "name": "IT",
-          "translate": "BT"
-        },
-        {
           "id": 38,
           "name": "keyboard",
           "translate": "klavye"
@@ -608,11 +588,6 @@
           "translate": "fotoğrafçılık"
         },
         {
-          "id": 55,
-          "name": "postcard",
-          "translate": "<"
-        },
-        {
           "id": 56,
           "name": "print",
           "translate": "Yazdır"
@@ -655,7 +630,7 @@
         {
           "id": 70,
           "name": "text message",
-          "translate": "Metin Mesajı (SMS)"
+          "translate": "SMS"
         },
         {
           "id": 71,
@@ -686,11 +661,6 @@
           "id": 77,
           "name": "webcam",
           "translate": "web kamerası"
-        },
-        {
-          "id": 78,
-          "name": "web page",
-          "translate": "internet sayfası"
         },
         {
           "id": 79,
@@ -967,7 +937,7 @@
         },
         {
           "id": 61,
-          "name": "pupil-student",
+          "name": "student",
           "translate": "öğrenci"
         },
         {
@@ -978,12 +948,12 @@
         {
           "id": 63,
           "name": "read",
-          "translate": "okuman"
+          "translate": "okumak"
         },
         {
           "id": 64,
           "name": "register",
-          "translate": "Kayıt ol"
+          "translate": "Kayıt olmak"
         },
         {
           "id": 65,
@@ -1034,11 +1004,6 @@
           "id": 78,
           "name": "technology",
           "translate": "teknoloji"
-        },
-        {
-          "id": 80,
-          "name": "test",
-          "translate": "Ölçek"
         },
         {
           "id": 81,
@@ -1127,11 +1092,6 @@
           "id": 16,
           "name": "camera",
           "translate": "kamera"
-        },
-        {
-          "id": 17,
-          "name": "card",
-          "translate": "kart"
         },
         {
           "id": 18,
@@ -1325,8 +1285,8 @@
         },
         {
           "id": 62,
-          "name": "interview(er)",
-          "translate": "Mülakat (lar)"
+          "name": "interview",
+          "translate": "Mülakat"
         },
         {
           "id": 63,
@@ -1553,7 +1513,7 @@
         },
         {
           "id": 6,
-          "name": "petrol ",
+          "name": "petrol",
           "translate": "petrol"
         },
         {
@@ -1606,7 +1566,7 @@
         },
         {
           "id": 1,
-          "name": "bake ",
+          "name": "bake",
           "translate": "pişirmek"
         },
         {
@@ -1631,12 +1591,12 @@
         },
         {
           "id": 6,
-          "name": "bitter ",
+          "name": "bitter",
           "translate": "acı-koyu"
         },
         {
           "id": 7,
-          "name": "boil ",
+          "name": "boil",
           "translate": "kaynama"
         },
         {
@@ -1951,7 +1911,7 @@
         },
         {
           "id": 71,
-          "name": "grill ",
+          "name": "grill",
           "translate": "ızgara"
         },
         {
@@ -2066,7 +2026,7 @@
         },
         {
           "id": 95,
-          "name": "microwave ",
+          "name": "microwave",
           "translate": "mikrodalga"
         },
         {
@@ -2296,7 +2256,7 @@
         },
         {
           "id": 141,
-          "name": "sweet ",
+          "name": "sweet",
           "translate": "tatlı"
         },
         {
@@ -2424,12 +2384,12 @@
         },
         {
           "id": 9,
-          "name": "bleed ",
+          "name": "bleed",
           "translate": "kanama"
         },
         {
           "id": 10,
-          "name": "blood ",
+          "name": "blood",
           "translate": "kan"
         },
         {
@@ -2445,7 +2405,7 @@
         {
           "id": 13,
           "name": "bra",
-          "translate": "sutyen"
+          "translate": "sütyen"
         },
         {
           "id": 16,
@@ -2474,7 +2434,7 @@
         },
         {
           "id": 21,
-          "name": "cold ",
+          "name": "cold",
           "translate": "soğuk"
         },
         {
@@ -2484,7 +2444,7 @@
         },
         {
           "id": 23,
-          "name": "cough ",
+          "name": "cough",
           "translate": "öksürük"
         },
         {
@@ -2559,8 +2519,8 @@
         },
         {
           "id": 40,
-          "name": "feel better/ill/sick",
-          "translate": "Daha iyi/hasta/hasta hissedin"
+          "name": "sick",
+          "translate": "hasta"
         },
         {
           "id": 41,
@@ -2629,7 +2589,7 @@
         },
         {
           "id": 55,
-          "name": "hear ",
+          "name": "hear",
           "translate": "duymak"
         },
         {
@@ -2714,7 +2674,7 @@
         },
         {
           "id": 74,
-          "name": "patient ",
+          "name": "patient",
           "translate": "hasta"
         },
         {
@@ -2744,7 +2704,7 @@
         },
         {
           "id": 80,
-          "name": "rest ",
+          "name": "rest",
           "translate": "dinlenme"
         },
         {
@@ -3086,7 +3046,7 @@
       "id": 9,
       "top_category": 0,
       "category_name": "House and Home",
-      "translate": "Ev ve yuva",
+      "translate": "Ev",
       "words": [
         {
           "id": 0,
@@ -3102,11 +3062,6 @@
           "id": 2,
           "name": "air conditioning",
           "translate": "klima"
-        },
-        {
-          "id": 3,
-          "name": "alarm (fire/car)",
-          "translate": "Alarm (Yangın/Araba)"
         },
         {
           "id": 5,
@@ -3237,11 +3192,6 @@
           "id": 32,
           "name": "channel",
           "translate": "kanal"
-        },
-        {
-          "id": 33,
-          "name": "chest of drawers",
-          "translate": "çekmecenin sandığı"
         },
         {
           "id": 34,
@@ -3391,7 +3341,7 @@
         {
           "id": 64,
           "name": "gate",
-          "translate": "kapı((Bahçe-Kale)"
+          "translate": "kapı"
         },
         {
           "id": 65,
@@ -3411,7 +3361,7 @@
         {
           "id": 68,
           "name": "handle",
-          "translate": "kapı kolu-kulp"
+          "translate": "kapı kolu"
         },
         {
           "id": 69,
@@ -3515,7 +3465,7 @@
         },
         {
           "id": 90,
-          "name": "microwave ",
+          "name": "microwave",
           "translate": "mikrodalga"
         },
         {
@@ -3630,7 +3580,7 @@
         },
         {
           "id": 113,
-          "name": "safe ",
+          "name": "safe",
           "translate": "güvenli"
         },
         {
@@ -3922,7 +3872,7 @@
       "id": 11,
       "top_category": 1,
       "category_name": "Personal Feelings, Opinions and Experiences (Adjectives)",
-      "translate": "Kişisel Duygular, Görüşler ve Deneyimler (Sıfatlar)",
+      "translate": "Duygular",
       "words": [
         {
           "id": 1,
@@ -4202,7 +4152,7 @@
         {
           "id": 61,
           "name": "great",
-          "translate": "İyi"
+          "translate": "harika"
         },
         {
           "id": 62,
@@ -4427,7 +4377,7 @@
         {
           "id": 112,
           "name": "slim",
-          "translate": "ince-zayıf"
+          "translate": "ince"
         },
         {
           "id": 113,
@@ -4584,7 +4534,7 @@
         },
         {
           "id": 7,
-          "name": "cafe ",
+          "name": "cafe",
           "translate": "kafe"
         },
         {
@@ -4769,7 +4719,7 @@
         },
         {
           "id": 47,
-          "name": "tourist information  centre",
+          "name": "tourist information centre",
           "translate": "turist bilgi Merkezi"
         },
         {
@@ -4788,7 +4738,7 @@
       "id": 13,
       "top_category": 3,
       "category_name": "Places: Countryside",
-      "translate": "Yerler: kırsal",
+      "translate": "Yerler: Kırsal",
       "words": [
         {
           "id": 2,
@@ -5071,7 +5021,7 @@
         {
           "id": 23,
           "name": "roundabout",
-          "translate": "dönel kavşak"
+          "translate": "kavşak"
         },
         {
           "id": 24,
@@ -5316,7 +5266,7 @@
         },
         {
           "id": 19,
-          "name": "cost ",
+          "name": "cost",
           "translate": "maliyet"
         },
         {
@@ -5427,7 +5377,7 @@
         {
           "id": 50,
           "name": "save",
-          "translate": "tasarruf etmek-biriktirmek"
+          "translate": "tasarruf etmek"
         },
         {
           "id": 51,
@@ -5448,11 +5398,6 @@
           "id": 54,
           "name": "shop assistant",
           "translate": "Mağaza Asistanı"
-        },
-        {
-          "id": 55,
-          "name": "shopper",
-          "translate": "alışveriş yapan kimse"
         },
         {
           "id": 56,
@@ -5524,7 +5469,7 @@
         },
         {
           "id": 12,
-          "name": "catch ",
+          "name": "catch",
           "translate": "tutmak"
         },
         {
@@ -5625,7 +5570,7 @@
         {
           "id": 36,
           "name": "football player",
-          "translate": "Futbol oyuncusu"
+          "translate": "Futbolcu"
         },
         {
           "id": 37,
@@ -5680,7 +5625,7 @@
         {
           "id": 49,
           "name": "ice skating",
-          "translate": "buz Pateni"
+          "translate": "buz pateni"
         },
         {
           "id": 50,
@@ -5734,7 +5679,7 @@
         },
         {
           "id": 63,
-          "name": "play ",
+          "name": "play",
           "translate": "Oynamak"
         },
         {
@@ -5774,12 +5719,12 @@
         },
         {
           "id": 73,
-          "name": "rest ",
+          "name": "rest",
           "translate": "dinlenme"
         },
         {
           "id": 74,
-          "name": "ride ",
+          "name": "ride",
           "translate": "sürmek"
         },
         {
@@ -5794,7 +5739,7 @@
         },
         {
           "id": 78,
-          "name": "run ",
+          "name": "run",
           "translate": "koşmak"
         },
         {
@@ -5879,7 +5824,7 @@
         },
         {
           "id": 97,
-          "name": "surf ",
+          "name": "surf",
           "translate": "sörf"
         },
         {
@@ -5934,7 +5879,7 @@
         },
         {
           "id": 111,
-          "name": "throw ",
+          "name": "throw",
           "translate": "atmak"
         },
         {
@@ -5969,12 +5914,12 @@
         },
         {
           "id": 120,
-          "name": "walk ",
+          "name": "walk",
           "translate": "yürümek"
         },
         {
           "id": 121,
-          "name": "watch ",
+          "name": "watch",
           "translate": "izlemek"
         },
         {
@@ -6003,7 +5948,7 @@
       "id": 18,
       "top_category": 4,
       "category_name": "The Natural World",
-      "translate": "Doğal Dünya",
+      "translate": "Doğa",
       "words": [
         {
           "id": 0,
@@ -6127,7 +6072,7 @@
         },
         {
           "id": 26,
-          "name": "fall ",
+          "name": "fall",
           "translate": "sonbahar"
         },
         {
@@ -6262,8 +6207,8 @@
         },
         {
           "id": 54,
-          "name": "mouse/mice",
-          "translate": "fare fareler"
+          "name": "mice",
+          "translate": "fareler"
         },
         {
           "id": 55,
@@ -6481,7 +6426,7 @@
         {
           "id": 3,
           "name": "autumn",
-          "translate": "sonbahar mevsimi"
+          "translate": "sonbahar"
         },
         {
           "id": 4,
@@ -6635,7 +6580,7 @@
         },
         {
           "id": 34,
-          "name": "Friday ",
+          "name": "Friday",
           "translate": "Cuma"
         },
         {
@@ -6933,7 +6878,7 @@
         },
         {
           "id": 38,
-          "name": "catch ",
+          "name": "catch",
           "translate": "tutmak"
         },
         {
@@ -6943,12 +6888,12 @@
         },
         {
           "id": 41,
-          "name": "check in ",
+          "name": "check in",
           "translate": "giriş"
         },
         {
           "id": 43,
-          "name": "check out ",
+          "name": "check out",
           "translate": "ödeme"
         },
         {
@@ -6983,7 +6928,7 @@
         },
         {
           "id": 51,
-          "name": "cycle ",
+          "name": "cycle",
           "translate": "bisiklet"
         },
         {
@@ -7040,11 +6985,6 @@
           "id": 64,
           "name": "driver",
           "translate": "şoför"
-        },
-        {
-          "id": 65,
-          "name": "driving/driver's",
-          "translate": "sürüş/sürücü"
         },
         {
           "id": 66,
@@ -7168,13 +7108,8 @@
         },
         {
           "id": 94,
-          "name": "land ",
+          "name": "land",
           "translate": "kara"
-        },
-        {
-          "id": 96,
-          "name": "left",
-          "translate": "ayrıldı"
         },
         {
           "id": 97,
@@ -7269,7 +7204,7 @@
         {
           "id": 115,
           "name": "oil",
-          "translate": "sıvı yağ"
+          "translate": "yağ"
         },
         {
           "id": 116,
@@ -7353,7 +7288,7 @@
         },
         {
           "id": 140,
-          "name": "sail ",
+          "name": "sail",
           "translate": "denize açılmak"
         },
         {
@@ -7550,7 +7485,7 @@
       "id": 22,
       "top_category": 0,
       "category_name": "Work and Jobs",
-      "translate": "İş ve iş",
+      "translate": "İş",
       "words": [
         {
           "id": 0,
@@ -7605,7 +7540,7 @@
         {
           "id": 13,
           "name": "business man",
-          "translate": "işadamı"
+          "translate": "iş adamı"
         },
         {
           "id": 14,
@@ -7685,7 +7620,7 @@
         {
           "id": 30,
           "name": "crew",
-          "translate": "mürettebat-ekip"
+          "translate": "mürettebat"
         },
         {
           "id": 33,
@@ -7745,7 +7680,7 @@
         {
           "id": 45,
           "name": "email",
-          "translate": "e -posta"
+          "translate": "e-posta"
         },
         {
           "id": 47,
@@ -7791,11 +7726,6 @@
           "id": 56,
           "name": "fireman",
           "translate": "itfaiyeci"
-        },
-        {
-          "id": 57,
-          "name": "football player-footballer",
-          "translate": "Futbol oyuncusu"
         },
         {
           "id": 60,
@@ -7875,7 +7805,7 @@
         {
           "id": 75,
           "name": "lecturer",
-          "translate": "öğretim Görevlisi"
+          "translate": "öğretim görevlisi"
         },
         {
           "id": 76,
@@ -7934,7 +7864,7 @@
         },
         {
           "id": 88,
-          "name": "officer ",
+          "name": "officer",
           "translate": "polis memuru"
         },
         {
@@ -7996,11 +7926,6 @@
           "id": 103,
           "name": "profession",
           "translate": "uzmanlık alanı"
-        },
-        {
-          "id": 106,
-          "name": "computer programmer",
-          "translate": "Bilgisayar programları"
         },
         {
           "id": 107,

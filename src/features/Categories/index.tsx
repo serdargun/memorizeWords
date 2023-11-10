@@ -86,7 +86,7 @@ const Categories = ({navigation, route}: CategoriesProps) => {
   return (
     <ScreenContainer>
       <StatusBar backgroundColor={colors.tertiary} />
-      <Header title="Kelimeler" />
+      <Header title="Kategoriler" />
       <ScrollView contentContainerStyle={styles.content}>
         {renderOngoingCategories()}
         <CategoryCarousel label="Yaşam">{renderCategories(0)}</CategoryCarousel>
